@@ -39,9 +39,9 @@ export default function Home() {
   };
 
   return (
-    <main className="">
-      <div>
-        <p>Todo List</p>
+    <main className="min-h-screen w-full flex justify-center py-11">
+      <div className="w-full md:w-1/2 lg:w-1/3">
+        <p className="text-center text-2xl py-4">My List Todo</p>
         <AddTodo
           title={title}
           handleAddTodo={handleAddTodo}

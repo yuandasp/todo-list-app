@@ -1,4 +1,7 @@
 "use client";
+
+import Image from "next/image";
+
 interface ListTodoProps {
   todos: { title: string; status: boolean }[];
   handleDelete: (i: number) => void;
@@ -7,10 +10,10 @@ interface ListTodoProps {
 
 function ListTodo({ todos, handleDelete, handleChangeStatus }: ListTodoProps) {
   return (
-    <div>
+    <>
       {todos.map((todo, i) => (
-        <div key={i}>
-          <p>{todo.status ? "done" : "on process"}</p>
+        <div key={i} className="flex justify-between px-11 gap-4 my-4">
+          {/* <p>{todo.status ? "done" : "on process"}</p> */}
           <input
             type="checkbox"
             id="status"
@@ -18,12 +21,26 @@ function ListTodo({ todos, handleDelete, handleChangeStatus }: ListTodoProps) {
             value={i}
             onChange={handleChangeStatus}
             checked={todo.status}
+            className="w-[16px]"
           />
-          <p>{todo.title}</p>
-          <button onClick={() => handleDelete(i)}>delete</button>
+          <div className="w-full bg-yellow-100 px-2">
+            {todo.status ? (
+              <p className="line-through">{todo.title}</p>
+            ) : (
+              <p>{todo.title}</p>
+            )}
+          </div>
+          <button onClick={() => handleDelete(i)}>
+            <Image
+              src="/assets/delete.png"
+              alt="delete todo"
+              width={12}
+              height={12}
+            />
+          </button>
         </div>
       ))}
-    </div>
+    </>
   );
 }
 
