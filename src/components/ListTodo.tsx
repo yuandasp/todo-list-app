@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Fragment } from "react";
 
 interface ListTodoProps {
   todos: { title: string; status: boolean }[];
@@ -21,21 +22,24 @@ function ListTodo({ todos, handleDelete, handleChangeStatus }: ListTodoProps) {
             value={i}
             onChange={handleChangeStatus}
             checked={todo.status}
-            className="w-[16px]"
+            className="w-[20px]"
           />
-          <div className="w-full bg-yellow-100 px-2">
+          <div className="w-full bg-yellow-50 px-2 rounded-md break-all">
             {todo.status ? (
-              <p className="line-through">{todo.title}</p>
+              <div className="flex gap-2 items-center py-1">
+                <p className="line-through">{todo.title}</p>
+                <p className="text-green-700 font-bold text-xs">(Done!)</p>
+              </div>
             ) : (
-              <p>{todo.title}</p>
+              <p className="py-1">{todo.title}</p>
             )}
           </div>
           <button onClick={() => handleDelete(i)}>
             <Image
               src="/assets/delete.png"
               alt="delete todo"
-              width={12}
-              height={12}
+              width={16}
+              height={16}
             />
           </button>
         </div>

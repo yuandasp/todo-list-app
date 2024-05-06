@@ -19,11 +19,13 @@ function AddTodo({ title, handleAddTodo, handleInputChange }: AddTodoProps) {
           value={title}
           onChange={handleInputChange}
           className="w-4/5 border-2 border-blue-500 rounded-md mr-2 px-2"
+          // className="w-4/5 rounded-md mr-2 px-2"
+          placeholder="Add todo here..."
         />
 
         <button
           type="submit"
-          className="w-1/5 bg-blue-500 text-white font-semibold px-1 py-1 text-sm rounded-md"
+          className="w-1/5 bg-blue-800 text-white font-semibold px-1 py-1 text-sm rounded-md"
         >
           Add
         </button>
