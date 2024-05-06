@@ -39,8 +39,8 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen w-full flex justify-center py-11">
-      <div className="w-full mx-11 md:mx-0 lg:mx-0 md:w-1/2 lg:w-1/3">
+    <main className="min-h-screen w-full flex justify-center">
+      <div className="w-full mx-11 md:mx-0 lg:mx-0 md:w-1/2 lg:w-1/3 py-11">
         <p className="text-center text-2xl p-4 mb-2 font-bold bg-blue-800 text-white rounded-lg">
           My List Todo
         </p>
